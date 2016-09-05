@@ -1,11 +1,11 @@
 
-require('UITableView,UIColor');
+require('UITableView,UIColor,UITableViewCell');
 
 /**
  *  动态定义变量
  *  defineClass() 第二个参数为类新增 property，格式为字符串数组，使用时与 OC property 接口一致
  */
-defineClass('ViewController', ['mainTable'], {
+defineClass('ViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>', ['mainTable'], {
             
             
             //<<<<<<
@@ -24,13 +24,17 @@ defineClass('ViewController', ['mainTable'], {
             
             lys__viewDidLoad: function() {
             
-            var pTableView = self.mainTable()
+            var pMainTable = self.mainTable();
             
-            pTableView.setBackgroundColor(UIColor.greenColor());
+            pMainTable.setDelegate(self);
+            pMainTable.setDataSource(self);
             
-            self.view().addSubview(pTableView);
             
-            pTableView.mas__makeConstraints(block('MASConstraintMaker*', function(make) {
+            pMainTable.setBackgroundColor(UIColor.greenColor());
+            
+            self.view().addSubview(pMainTable);
+            
+            pMainTable.mas__makeConstraints(block('MASConstraintMaker*', function(make) {
                                                   
                                                   make.top().equalTo()(self.view()).offset()(10);
                                                   make.left().equalTo()(self.view()).offset()(10);
@@ -41,6 +45,53 @@ defineClass('ViewController', ['mainTable'], {
                                                   }));
             
             },
+            
+            
+            /**
+             *  <UITableViewDelegate,UITableViewDataSource>
+             */
+            numberOfSectionsInTableView: function(tableView) {
+            
+            return 1;
+            
+            },
+            tableView_numberOfRowsInSection: function(tableView, section) {
+            
+            return 10;
+            
+            },
+            tableView_cellForRowAtIndexPath: function(tableView, indexPath) {
+            
+            var cell = tableView.dequeueReusableCellWithIdentifier("cell")
+            
+            if (!cell) {
+            
+            cell = UITableViewCell.alloc().initWithStyle_reuseIdentifier(0, "cell")
+            
+            }
+            
+            var text = "";
+            
+            switch (indexPath.row()) {
+            
+            case 0:
+            text = "UIButton";
+            break;
+            
+            case 1:
+            text = "UILabel";
+            break;
+            
+            default:
+            break;
+            }
+            
+            cell.textLabel().setText(text);
+            
+            return cell;
+            
+            },
+            
             
             
             //>>>>>>
