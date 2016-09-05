@@ -15,7 +15,7 @@
 		0D189F611D7D3A81000862F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D189F5F1D7D3A81000862F3 /* LaunchScreen.storyboard */; };
 		0D189F6C1D7D3A81000862F3 /* LYSJSPatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D189F6B1D7D3A81000862F3 /* LYSJSPatchTests.m */; };
 		0D189F771D7D3A82000862F3 /* LYSJSPatchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D189F761D7D3A82000862F3 /* LYSJSPatchUITests.m */; };
-		0DFE50EB1D7D3F6E00C13910 /* LYS_JSFile in Resources */ = {isa = PBXBuildFile; fileRef = 0DFE50EA1D7D3F6E00C13910 /* LYS_JSFile */; };
+		0DFE50F01D7D4A4800C13910 /* LYS_JSFile in Resources */ = {isa = PBXBuildFile; fileRef = 0DFE50EF1D7D4A4800C13910 /* LYS_JSFile */; };
 		19FD90AE1559457E1BC31D57 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C64BF35F9E51C16249293057 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,7 @@
 		0D189F721D7D3A82000862F3 /* LYSJSPatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYSJSPatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D189F761D7D3A82000862F3 /* LYSJSPatchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYSJSPatchUITests.m; sourceTree = "<group>"; };
 		0D189F781D7D3A82000862F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DFE50EA1D7D3F6E00C13910 /* LYS_JSFile */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LYS_JSFile; sourceTree = "<group>"; };
+		0DFE50EF1D7D4A4800C13910 /* LYS_JSFile */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LYS_JSFile; sourceTree = "<group>"; };
 		28009A8AC41BBC5EA1164EA4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7EF6B4FF8962133FAC83D66E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C64BF35F9E51C16249293057 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +114,7 @@
 				0D189F551D7D3A81000862F3 /* AppDelegate.m */,
 				0D189F571D7D3A81000862F3 /* ViewController.h */,
 				0D189F581D7D3A81000862F3 /* ViewController.m */,
-				0DFE50EA1D7D3F6E00C13910 /* LYS_JSFile */,
+				0DFE50EF1D7D4A4800C13910 /* LYS_JSFile */,
 				0D189F5A1D7D3A81000862F3 /* Main.storyboard */,
 				0D189F5D1D7D3A81000862F3 /* Assets.xcassets */,
 				0D189F5F1D7D3A81000862F3 /* LaunchScreen.storyboard */,
@@ -275,7 +275,7 @@
 			files = (
 				0D189F611D7D3A81000862F3 /* LaunchScreen.storyboard in Resources */,
 				0D189F5E1D7D3A81000862F3 /* Assets.xcassets in Resources */,
-				0DFE50EB1D7D3F6E00C13910 /* LYS_JSFile in Resources */,
+				0DFE50F01D7D4A4800C13910 /* LYS_JSFile in Resources */,
 				0D189F5C1D7D3A81000862F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
