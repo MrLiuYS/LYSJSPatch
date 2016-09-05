@@ -1,4 +1,10 @@
 
+/**
+ *  导入js文件
+ */
+include('ButtonViewCtrl.js')
+
+
 require('UITableView,UIColor,UITableViewCell');
 
 /**
@@ -84,11 +90,22 @@ defineClass('ViewController : UIViewController <UITableViewDelegate,UITableViewD
             
             default:
             break;
+            
             }
             
             cell.textLabel().setText(text);
             
             return cell;
+            
+            },
+            
+            tableView_didSelectRowAtIndexPath: function(tableView, indexPath) {
+            
+            
+            var ctrl = ButtonViewCtrl.alloc().init();
+            
+            self.navigationController().pushViewController_animated(ctrl, YES);
+            
             
             },
             

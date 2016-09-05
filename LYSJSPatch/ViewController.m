@@ -97,6 +97,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
+    UIViewController *ctrl = [[UIViewController alloc]init];
+    
+    [self.navigationController pushViewController:ctrl animated:YES];
+    
+    
 }
 
 
