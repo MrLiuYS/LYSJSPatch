@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <JPEngine.h>
 
 @interface AppDelegate ()
 
@@ -17,8 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    [JPEngine startEngine];
+    
+    NSString *sourcePath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"LYS_JSFile/main.js"];
+    [JPEngine evaluateScriptWithPath:sourcePath];
+    
+    
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
