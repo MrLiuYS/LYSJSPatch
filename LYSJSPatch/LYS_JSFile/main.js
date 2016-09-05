@@ -1,27 +1,44 @@
 
 require('UITableView,UIColor');
-defineClass('ViewController', {
+
+/**
+ *  动态定义变量
+ *  defineClass() 第二个参数为类新增 property，格式为字符串数组，使用时与 OC property 接口一致
+ */
+defineClass('ViewController', ['mainTable'], {
             
             
             //<<<<<<
             
+            loadView: function() {
+            
+            self.super().loadView()
+            
+            /**
+             *  添加新的 Property
+             */
+            self.setMainTable( UITableView.alloc().init() )
+            
+            },
+            
+            
             lys__viewDidLoad: function() {
             
-            var mainTableView = UITableView.alloc().initWithFrame({x:20, y:200, width:100, height:100});
+            var pTableView = self.mainTable()
             
-            mainTableView.setBackgroundColor(UIColor.greenColor());
+            pTableView.setBackgroundColor(UIColor.greenColor());
             
-            self.view().addSubview(mainTableView);
+            self.view().addSubview(pTableView);
             
-            mainTableView.mas__makeConstraints(block('MASConstraintMaker*', function(make) {
-                                                     
-                                                     make.top().equalTo()(self.view()).offset()(10);
-                                                     make.left().equalTo()(self.view()).offset()(10);
-                                                     make.right().equalTo()(self.view()).offset()(-10);
-                                                     make.bottom().equalTo()(self.view()).offset()(-10);
-                                                     
-                                                     
-                                                     }));
+            pTableView.mas__makeConstraints(block('MASConstraintMaker*', function(make) {
+                                                  
+                                                  make.top().equalTo()(self.view()).offset()(10);
+                                                  make.left().equalTo()(self.view()).offset()(10);
+                                                  make.right().equalTo()(self.view()).offset()(-10);
+                                                  make.bottom().equalTo()(self.view()).offset()(-10);
+                                                  
+                                                  
+                                                  }));
             
             },
             
