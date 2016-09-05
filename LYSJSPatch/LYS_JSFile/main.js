@@ -2,6 +2,7 @@
  *  导入js文件
  */
 include('ButtonViewCtrl.js')
+include('LabelViewCtrl.js')
 
 
 require('UITableView,UIColor,UITableViewCell');
@@ -34,7 +35,6 @@ defineClass('ViewController : UIViewController <UITableViewDelegate,UITableViewD
         pMainTable.setDelegate(self);
         pMainTable.setDataSource(self);
 
-
         pMainTable.setBackgroundColor(UIColor.greenColor());
 
         self.view().addSubview(pMainTable);
@@ -62,7 +62,7 @@ defineClass('ViewController : UIViewController <UITableViewDelegate,UITableViewD
     },
     tableView_numberOfRowsInSection: function(tableView, section) {
 
-        return 10;
+        return 20;
 
     },
     tableView_cellForRowAtIndexPath: function(tableView, indexPath) {
@@ -100,7 +100,23 @@ defineClass('ViewController : UIViewController <UITableViewDelegate,UITableViewD
 
     tableView_didSelectRowAtIndexPath: function(tableView, indexPath) {
 
-        ButtonViewCtrl.pushInViewController(self);
+        switch (indexPath.row()) {
+
+            case 0:
+
+                ButtonViewCtrl.pushInViewController(self)
+                break;
+
+            case 1:
+
+                LabelViewCtrl.pushInViewController(self)
+                break;
+
+            default:
+                break;
+
+        }
+
 
 
     },
