@@ -3,6 +3,7 @@
  */
 include('ButtonViewCtrl.js')
 include('LabelViewCtrl.js')
+include('WebViewCtrl.js')
 
 
 require('UITableView,UIColor,UITableViewCell');
@@ -23,8 +24,13 @@ defineClass('ViewController : UIViewController <UITableViewDelegate,UITableViewD
         /**
          *  添加新的 Property
          */
-        self.setMainTable(UITableView.alloc().init())
+        self.setMainTable(self.createTabel())
 
+    },
+
+    createTabel: function() {
+        var table = UITableView.alloc().init()
+        return table
     },
 
 
@@ -87,6 +93,10 @@ defineClass('ViewController : UIViewController <UITableViewDelegate,UITableViewD
                 text = "UILabel";
                 break;
 
+            case 2:
+                text = "UIWebView";
+                break;
+
             default:
                 break;
 
@@ -110,6 +120,11 @@ defineClass('ViewController : UIViewController <UITableViewDelegate,UITableViewD
             case 1:
 
                 LabelViewCtrl.pushInViewController(self)
+                break;
+
+            case 2:
+
+                WebViewCtrl.pushInViewController(self)
                 break;
 
             default:

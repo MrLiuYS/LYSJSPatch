@@ -18,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    /**
+     jspatch 中 第一次使用UIWebView 会引起乱码. 可以使用下面的方法.也可以使用performSelectorInOC
+     */
+    UIWebView *view = [[UIWebView alloc]init];
+    view.frame = CGRectZero;
     
     [JPEngine startEngine];
     
