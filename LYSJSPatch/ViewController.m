@@ -10,6 +10,8 @@
 
 #import <Masonry.h>
 
+#import "UIColor+LYS.h"
+
 
 @interface ViewController ()
 
@@ -28,6 +30,8 @@
 - (void)lys_viewDidLoad {
     
     NSLog(@"local");
+    
+    self.view.backgroundColor = [UIColor colorWithSPHex:@"#444444" alpha:1];
     
 }
 

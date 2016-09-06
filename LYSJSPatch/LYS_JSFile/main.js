@@ -4,6 +4,7 @@
 include('ButtonViewCtrl.js')
 include('LabelViewCtrl.js')
 include('WebViewCtrl.js')
+include('ColorViewCtrl.js')
 
 
 require('UITableView,UIColor,UITableViewCell');
@@ -97,6 +98,10 @@ defineClass('ViewController : UIViewController <UITableViewDelegate,UITableViewD
                 text = "UIWebView";
                 break;
 
+            case 3:
+                text = "UIColor";
+                break;
+
             default:
                 break;
 
@@ -125,6 +130,11 @@ defineClass('ViewController : UIViewController <UITableViewDelegate,UITableViewD
             case 2:
 
                 WebViewCtrl.pushInViewController(self)
+                break;
+
+            case 3:
+
+                ColorViewCtrl.pushInViewController(self)
                 break;
 
             default:
