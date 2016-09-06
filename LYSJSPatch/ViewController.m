@@ -31,8 +31,6 @@
     
     NSLog(@"local");
     
-    self.view.backgroundColor = [UIColor colorWithSPHex:@"#444444" alpha:1];
-    
 }
 
 - (IBAction)clickRunJS:(id)sender {
