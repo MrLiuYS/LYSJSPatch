@@ -1,6 +1,6 @@
 require('UIWebView,UIColor,NSNumber,NSURLRequest,NSURL');
 
-defineClass('WebViewCtrl : UIViewController ', {
+defineClass('WebViewCtrl : UIViewController <UIWebViewDelegate>', {
 
   /**
    * 实例方法
@@ -77,6 +77,37 @@ defineClass('WebViewCtrl : UIViewController ', {
     return webView;
 
   },
+
+  /*
+  UIWebViewDelegate
+   */
+  /*
+  
+  解决:使用webView_shouldStartLoadWithRequest_navigationType 会引起崩溃
+  第一: 头部添加<UIWebViewDelegate>
+        defineClass('WebViewCtrl : UIViewController <UIWebViewDelegate>'
+
+  第二: 在 "AppDelegate.h" 添加 UIWebViewDelegate 的声明 : 
+        @interface AppDelegate () <UIWebViewDelegate>
+
+        ???不知道有没有其他更好的方法
+   */
+  webView_shouldStartLoadWithRequest_navigationType: function(webView, request, navigationType) {
+
+    console.log("shouldStartLoadWithRequest");
+
+    return true;
+  },
+  webViewDidStartLoad: function(webView) {
+    console.log("webViewDidStartLoad");
+  },
+  webViewDidFinishLoad: function(webView) {
+    console.log("webViewDidFinishLoad");
+  },
+  webView_didFailLoadWithError: function(webView, error) {
+    console.log("didFailLoadWithError");
+  },
+
 
 
 }, {

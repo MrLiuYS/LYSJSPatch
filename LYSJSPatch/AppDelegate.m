@@ -9,7 +9,11 @@
 #import "AppDelegate.h"
 #import <JPEngine.h>
 
-@interface AppDelegate ()
+/**
+ *  jspatch 使用到 UIWebView 的时候
+ 运行webView_shouldStartLoadWithRequest_navigationType 会引起崩溃. 在这里先添加上
+ */
+@interface AppDelegate () <UIWebViewDelegate>
 
 @end
 
