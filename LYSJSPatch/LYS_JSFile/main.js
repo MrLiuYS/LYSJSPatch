@@ -5,6 +5,7 @@ include('ButtonViewCtrl.js')
 include('LabelViewCtrl.js')
 include('WebViewCtrl.js')
 include('ColorViewCtrl.js')
+include('MJRefreshViewCtrl.js')
 
 
 require('UITableView,UIColor,UITableViewCell');
@@ -102,6 +103,10 @@ defineClass('ViewController : UIViewController <UITableViewDelegate,UITableViewD
                 text = "UIColor";
                 break;
 
+            case 4:
+                text = "MJRefresh2.1.0";
+                break;
+
             default:
                 break;
 
@@ -135,6 +140,10 @@ defineClass('ViewController : UIViewController <UITableViewDelegate,UITableViewD
             case 3:
 
                 ColorViewCtrl.pushInViewController(self)
+                break;
+
+            case 4:
+                MJRefreshViewCtrl.pushInViewController(self)
                 break;
 
             default:
