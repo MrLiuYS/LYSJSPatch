@@ -6,9 +6,10 @@ include('LabelViewCtrl.js')
 include('WebViewCtrl.js')
 include('ColorViewCtrl.js')
 include('MJRefreshViewCtrl.js')
+include('DeallocViewController.js')
 
 
-require('UITableView,UIColor,UITableViewCell');
+require('UITableView,UIColor,UITableViewCell,DeallocViewController');
 
 /**
  *  动态定义变量
@@ -107,6 +108,10 @@ defineClass('ViewController : UIViewController <UITableViewDelegate,UITableViewD
                 text = "MJRefresh2.1.0";
                 break;
 
+            case 5:
+                text = "DeallocViewController";
+                break;
+
             default:
                 break;
 
@@ -144,6 +149,10 @@ defineClass('ViewController : UIViewController <UITableViewDelegate,UITableViewD
 
             case 4:
                 MJRefreshViewCtrl.pushInViewController(self)
+                break;
+
+            case 5:
+                DeallocViewController.pushInViewController(self)
                 break;
 
             default:
